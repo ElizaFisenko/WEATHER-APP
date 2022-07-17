@@ -1,39 +1,3 @@
-// let weather = {
-//     "paris": {
-//         temp: 19.7,
-//         humidity: 80
-//     },
-//     "tokyo": {
-//         temp: 17.3,
-//         humidity: 50
-//     },
-//     "lisbon": {
-//         temp: 30.2,
-//         humidity: 20
-//     },
-//     "san francisco": {
-//         temp: 20.9,
-//         humidity: 100
-//     },
-//     "oslo": {
-//         temp: -5,
-//         humidity: 20
-//     }
-// };
-
-// let city = prompt("Enter a city");
-// city = city.toLowerCase;
-// let temperature = weather[city].temp;
-// let fahrenheitTemperature = Math.round((temperature * 9) / 5 + 32);
-
-// if (weather[city]) {
-//     alert(`It is currently ${Math.round(weather[city].temp)}°C (${fahrenheitTemperature}°F) in ${city} with a humidity of ${weather[city].humidity}%`)
-// } else {
-//     alert(`Sorry, we don't know the weather for this city, try going to https://www.google.com/search?q=weather+${city}`)
-// }
-
-
-// week 4. homework 
 let now = new Date();
 let monthes = [
   "Jan",
@@ -93,10 +57,14 @@ function fahrenheitTemp(event) {
 let fahrenheitMetric = document.querySelector(".fahrenheit");
 fahrenheitMetric.addEventListener("click", fahrenheitTemp);
 
-
-// week 5. homework 
 let apiKey = "5f68aa65e1a9a27ce8d4d2eebf53b5a9";
 let units = "metric";
+
+function load() {
+  let city = "Kyiv";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(showTemp);
+}
 
 function cityTemp(event) {
   event.preventDefault();
@@ -116,7 +84,6 @@ function tempByGeo(event) {
 }
 
 function showTemp(response) {
-  console.log(response);
   let city = document.querySelector("li#city");
   city.innerHTML = response.data.name;
   let currentTemp = Math.round(response.data.main.temp);
@@ -140,6 +107,8 @@ function showTemp(response) {
   currentSunrise.innerHTML = `Sunrise: ${currentSunriseHours}:${currentSunriseMin} am`;
   currentSunset.innerHTML = `Sunset: ${currentSunsetHours}:${currentSunsetMin} pm`;
 }
+
+window.onload = load;
 
 let searchButton = document.querySelector("#city-form");
 searchButton.addEventListener("submit", cityTemp);
