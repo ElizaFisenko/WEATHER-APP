@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliza project weather</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link href="src/style.css" rel="stylesheet" type="text/css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <form id="city-form">
+            <input type="text" placeholder="Enter town here" class="enterCity">
+            <input class="button" type="submit" value="SEARCH">
+        </form> 
+        <button class="button">
+            TEMPERATURE BY GEO
+        </button>
+        <div class="row">
+            <div class="col-3">
+                <ul>
+                    <li id="city">Kyiv</li>
+                    <li id="currentDate"></li>
+                    <li id="dayHour"></li>
+                    <li id="cityTemp">28</li> <a href="#" class="celsius temp">°C |</a> <a href="#" class="fahrenheit temp">°F</a>
+                    <li>Cloudy</li>
+                </ul>
+            </div>
+            <div class="col-3">
+                <img class="current" src="../project/images/cloudy.png" alt="cloudy">
+            </div>
+            <div class="col-3">
+                <ul>
+                    <li id="wind"></li>
+                    <li id="pressure"></li>
+                    <li id="humidity"></li>
+                    <li id="sunrise"></li>
+                    <li id="sunset"></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row flex-row">
+            <div class="col-2">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">SUN</h5>
+                        <img src="../project/images/sun.png" class="card-img-top" alt="sun">
+                        <p class="card-text">27* C</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="card" >
+                    <div class="card-body">
+                        <h5 class="card-title">MON</h5>
+                        <img src="../project/images/rain.png" class="card-img-top" alt="rain">
+                        <p class="card-text">25* C</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="card" >
+                    <div class="card-body">
+                        <h5 class="card-title">TUE</h5>
+                        <img src="../project/images/cloudy.png" class="card-img-top" alt="cloudy">
+                        <p class="card-text">26* C</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">WED</h5>
+                        <img src="../project/images/rain.png" class="card-img-top" alt="rain">
+                        <p class="card-text">23* C</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">THU</h5>
+                        <img src="../project/images/sun.png" class="card-img-top" alt="sun">
+                        <p class="card-text">28* C</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../project/src/script.js"></script>
+</body>
+</html>

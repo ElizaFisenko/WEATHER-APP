@@ -1,0 +1,42 @@
+body {
+    max-width: 1800px;
+    margin: 50px auto;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+li {
+    list-style: none;
+}
+button {
+    margin: 20px;
+}
+
+.button {
+    padding: 5px 10px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.enterCity {
+    max-width: 1000px;
+}
+.row {
+    justify-content: center;
+    margin: 50px auto;
+}
+.col-3 {
+    font-size: 30px;
+    padding: 20px auto;
+}
+.current {
+    max-width: 300px;
+}
+.card-img-top {
+    max-width: 60px;
+}
+
+.temp {
+    text-decoration: none;
+    font-size: 20px;
+}
