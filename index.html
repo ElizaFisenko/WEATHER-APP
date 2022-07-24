@@ -12,87 +12,98 @@
 </head>
 <body>
     <div class="container">
-        <form id="city-form">
-            <input type="text" placeholder="Enter town here" class="enterCity">
-            <input class="button" type="submit" value="SEARCH">
-        </form> 
-        <button class="button">
-            TEMPERATURE BY GEO
-        </button>
-        <div class="row">
-            <div class="col-3">
-                <ul>
-                    <li id="city"></li>
-                    <li id="currentDate"></li>
-                    <li id="dayHour"></li>
-                    <li id="cityTemp">28</li> <a href="#" class="celsius temp">°C |</a> <a href="#" class="fahrenheit temp">°F</a>
-                    <li>Cloudy</li>
-                </ul>
+        <div class="weather-app-wrapper">
+            <div class="weather-app">
+                <form id="city-form">
+                    <div class="row">
+                        <div class="col-7">
+                            <input type="search" placeholder="Enter town here" class="form-control" />
+                        </div>
+                        <div class="col-3">
+                            <input class="btn btn-primary" type="submit" value="SEARCH" />
+                        </div>
+                    </div>
+                </form> 
+                <button class="button">
+                    TEMPERATURE BY GEO
+                </button>
+                <div class="row">
+                    <div class="col-3">
+                        <h1 id="city"></h1>
+                        <ul>
+                            <li>Last updated at: <span id="date"></span></li>
+                            <li id="description"></li>
+                        </ul>
+                        <strong id="cityTemp"></strong> 
+                        <span class="units"><a href="#" id="celsius" class="active">°C</a> |</a> <a href="#" id="fahrenheit">°F</a></span>
+                    </div>
+                    <div class="col-3">
+                        <img class="current" src="" alt="" id="icon">
+                    </div>
+                    <div class="col-3">
+                        <ul>
+                            <li id="wind"></li>
+                            <li id="pressure"></li>
+                            <li id="humidity"></li>
+                            <li id="sunrise"></li>
+                            <li id="sunset"></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row flex-row">
+                    <div class="col-2">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">SUN</h5>
+                                <img src="./images/sun.png" class="card-img-top" alt="sun">
+                                <p class="card-text">27* C</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="card" >
+                            <div class="card-body">
+                                <h5 class="card-title">MON</h5>
+                                <img src="./images/rain.png" class="card-img-top" alt="rain">
+                                <p class="card-text">25* C</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="card" >
+                            <div class="card-body">
+                                <h5 class="card-title">TUE</h5>
+                                <img src="./images/cloudy.png" class="card-img-top" alt="cloudy">
+                                <p class="card-text">26* C</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">WED</h5>
+                                <img src="./images/rain.png" class="card-img-top" alt="rain">
+                                <p class="card-text">23* C</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">THU</h5>
+                                <img src="./images/sun.png" class="card-img-top" alt="sun">
+                                <p class="card-text">28* C</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-3">
-                <img class="current" src="./images/cloudy.png" alt="cloudy">
-            </div>
-            <div class="col-3">
-                <ul>
-                    <li id="wind"></li>
-                    <li id="pressure"></li>
-                    <li id="humidity"></li>
-                    <li id="sunrise"></li>
-                    <li id="sunset"></li>
-                </ul>
+            <div>
+                <a href="https://github.com/ElizaFisenko/WEATHER-APP" target="_blank">Open-source code</a>
+                <span>by Eliza Fisenko</span>
+            </div> 
             </div>
         </div>
-        <div class="row flex-row">
-            <div class="col-2">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">SUN</h5>
-                        <img src="./images/sun.png" class="card-img-top" alt="sun">
-                        <p class="card-text">27* C</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-2">
-                <div class="card" >
-                    <div class="card-body">
-                        <h5 class="card-title">MON</h5>
-                        <img src="./images/rain.png" class="card-img-top" alt="rain">
-                        <p class="card-text">25* C</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-2">
-                <div class="card" >
-                    <div class="card-body">
-                        <h5 class="card-title">TUE</h5>
-                        <img src="./images/cloudy.png" class="card-img-top" alt="cloudy">
-                        <p class="card-text">26* C</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-2">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">WED</h5>
-                        <img src="./images/rain.png" class="card-img-top" alt="rain">
-                        <p class="card-text">23* C</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-2">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">THU</h5>
-                        <img src="./images/sun.png" class="card-img-top" alt="sun">
-                        <p class="card-text">28* C</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div>
-            <a href="https://github.com/ElizaFisenko/WEATHER-APP" target="_blank">Open-source code</a>
-            <span>by Eliza Fisenko</span>
-        </div>    
     </div>
     <script src="./src/script.js"></script>
 </body>
