@@ -18,13 +18,13 @@ function formatDate(timestamp) {
     "Dec"
   ];
   let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednsday",
-    "Thursday",
-    "Friday",
-    "Saturday"
+    "Sun",
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu",
+    "Fri",
+    "Sat"
   ];
   let day = days[date.getDay()];
   let month = monthes[date.getMonth()];
@@ -39,19 +39,19 @@ function formatDate(timestamp) {
     minutes = `0${minutes}`;
   }
   
-  return `${month} ${date.getDate()}, ${day}, ${hours} : ${minutes}`;
+  return `Last updated at: ${month} ${date.getDate()}, ${day}, ${hours} : ${minutes}`;
 }
 
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let days = [
-    "Sun",
-    "Mon",
-    "Tue",
-    "Wed",
-    "Thu",
-    "Fri",
-    "Sat"
+    "SUN",
+    "MON",
+    "TUE",
+    "WED",
+    "THU",
+    "FRI",
+    "SAT"
   ];
   let day = days[date.getDay()];
   return day;
@@ -62,14 +62,14 @@ function displayForecast(response) {
 
   let forecastElement = document.querySelector("#forecast");
 
-  let forecastHTML = `<div class = "row">`;
+  let forecastHTML = `<div class = "row forecast">`;
 
   forecast.forEach(function (forecastDay, index) {
     if (index < 6) {
       forecastHTML = forecastHTML + `
         <div class="col-2">
           <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
-          <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt="" width="42" />
+          <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt="" width="70" />
           <div class="weather-forecast-temp">
             <span class="weather-forecast-temp-max">${Math.round(forecastDay.temp.max)}°C</span>
             <span class="weather-forecast-temp-min">${Math.round(forecastDay.temp.min)}°C</span>
@@ -182,4 +182,3 @@ searchButton.addEventListener("submit", cityTemp);
 
 let geoButton = document.querySelector("button");
 geoButton.addEventListener("click", tempByGeo);
-

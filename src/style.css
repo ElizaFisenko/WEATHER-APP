@@ -1,58 +1,71 @@
 body {
-    text-align: center;
     font-family: 'Times New Roman', Times, serif;
+}
+
+button {
+    margin: 40px auto;
+    padding: 30px;
+    background-color: rgb(58, 70, 236);
+    font-size: 20px;
+    color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    box-shadow: 12px 12px 2px 1px rgba(31, 42, 141, 0.7);
+    display: block;
+    transition: all 200ms ease-in-out;
+}
+
+button:hover {
+    background-color: rgb(90, 135, 250);
+    cursor: pointer;
+}
+
+h1 {
+    font-size: 65px;
+    color: white;
+}
+
+ul {
+    padding: 0;
 }
 
 li {
     list-style: none;
-    font-size: 20px;
-    color: rgb(80, 79, 79);
+    font-size: 23px;
+    color: #fff;
 }
 
 li:first-letter {
     text-transform: capitalize;
 }
 
-button {
-    margin: 20px;
+.weather-app-wrapper {
+    max-width: 900px;
+    margin: 50px auto;
 }
 
 .weather-app {
-    border: 1px solid;
+    border: 1px solid rgb(19, 72, 247);
     border-radius: 5px;
-    padding: 20px;
+    padding: 30px;
     margin-bottom: 20px;
+    background: linear-gradient(rgb(195, 211, 252), rgb(39, 88, 252));
 }
 
-.weather-app-wrapper {
-    max-width: 1000px;
-    margin: 50px auto;
+.current-img img {
+    width: 150px;
+    padding: 50px 0px;
 }
 
-.enterCity {
-    max-width: 1000px;
-}
-.row {
-    justify-content: center;
-    margin: 50px auto;
-}
-.col-3 {
-    padding: 20px auto;
-}
-.current {
-    max-width: 300px;
-}
-.card-img-top {
-    max-width: 60px;
-}
 .active {
     text-decoration: none;
-    color: black;
+    color: #fff;
     cursor: default;
 }
 .active:hover {
     text-decoration: none;
 }
+
 .units {
     position: relative;
     font-size: 16px;
@@ -60,7 +73,36 @@ button {
     text-decoration: none;
 }
 
+.row {
+    justify-content: center;
+}
+
+.forecast {
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    border: 1px solid white;
+    border-radius: 7px;
+    padding: 10px;
+    background-color: rgb(90, 135, 250);
+    margin-top: 40px;
+}
+
+.weather-forecast-temp-min {
+    color: rgb(177, 198, 252);
+}
+
 #cityTemp {
     font-size: 60px;
     font-weight: 400;
+    color: #fff;
+}
+
+#date {
+    font-size: 15px;
+    color: rgb(195, 211, 252);
+}
+
+#additional-info {
+    margin-top: 60px;
 }
