@@ -42,6 +42,47 @@ function formatDate(timestamp) {
   return `${month} ${date.getDate()}, ${day}, ${hours} : ${minutes}`;
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = [
+    "Sun",
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu",
+    "Fri",
+    "Sat"
+  ];
+  let day = days[date.getDay()];
+  return day;
+}
+
+function displayForecast(response) {
+  let forecast = response.data.daily;
+
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class = "row">`;
+
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML = forecastHTML + `
+        <div class="col-2">
+          <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
+          <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt="" width="42" />
+          <div class="weather-forecast-temp">
+            <span class="weather-forecast-temp-max">${Math.round(forecastDay.temp.max)}°C</span>
+            <span class="weather-forecast-temp-min">${Math.round(forecastDay.temp.min)}°C</span>
+          </div>
+        </div>
+      `;
+    }
+  })
+
+  forecastHTML = forecastHTML + `</div>`
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function celsiusTemp(event) {
   event.preventDefault();
   let currentTemperature = document.querySelector("#cityTemp"); 
@@ -82,6 +123,11 @@ function tempByGeo(event) {
   });
 }
 
+function getForecast(coordinates) {
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function showTemp(response) {
   let cityName = response.data.name;
   let weatherDescript = response.data.weather[0].description;
@@ -117,6 +163,8 @@ function showTemp(response) {
   fullDate.innerHTML = formatDate(response.data.dt * 1000);
   iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${currentIcon}@2x.png`);
   iconElement.setAttribute("alt", weatherDescript);
+
+  getForecast(response.data.coord);
 }
 
 window.onload = load;
